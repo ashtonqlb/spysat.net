@@ -1,0 +1,43 @@
+html, body {
+    height: 100%;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+    background: #000;
+    color: #fff;
+}
+
+h1 {
+    text-align: center; /* Center-align h1 elements */
+}
+
+nav {
+    text-align: justify; /* Justify-align nav elements */
+    text-align-last: justify; /* For cross-browser compatibility */
+    
+}
+
+nav a {
+    color: grey; /* Set the default color of the links to grey */
+    text-decoration: none; /* Remove underlines from links */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+nav a:hover {
+    color: white; /* Change the color of links to white on hover */
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    padding: 10px;
+    text-align: center;
+}

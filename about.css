@@ -1,0 +1,87 @@
+body {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+padding-top: 1%;
+padding-bottom: 0;
+text-align: center; /* Justify-align nav elements */
+text-align-last: center; /* For cross-browser compatibility */
+}
+
+nav a {
+color: grey; /* Set the default color of the links to grey */
+text-decoration: none; /* Remove underlines from links */
+transition: color 0.3s; /* Smooth transition for color change */
+}
+
+nav a:hover {
+    color: black; /* Change the color of links to white on hover */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 0px;
+}
+
+.content {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.text {
+    max-width: 50%;
+}
+.image {
+    max-width: 50%;
+    height: 90vh; /* Set height to 100% of the viewport height */
+    overflow: hidden; /* Hide any overflow content beyond the viewport */
+}
+
+.image img {
+    height: 100%; /* Set the height of the image to 100% of its container */
+    width: auto; /* Ensure the width adjusts proportionally */
+    object-fit: cover; /* Scale the image while maintaining its aspect ratio */
+}
+
+.back{
+    padding-bottom: 1%;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%
+    }
+
+    .content {
+        flex-direction: column;
+        padding: 0px;
+    }
+
+    .text {
+        text-align: left; /* Set text alignment to left on mobile */
+        padding: 0; /* Reduce padding to 0 on mobile */
+    }
+
+    .projects {
+        list-style: none;
+        list-style-type: none;
+    }
+
+    .image,
+    .back {
+        display: none;
+    }
+}
