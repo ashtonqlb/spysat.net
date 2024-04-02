@@ -17,7 +17,7 @@ function loadAboutPage() {
 }
 
 function loadMainPage() {
-    fetch('main.html')
+    fetch('index.html')
         .then(response => response.text())
         .then(data => {
             const parser = new DOMParser();
