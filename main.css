@@ -15,7 +15,6 @@ html, body {
 
 .container {
   display: flex;
-  height: 100vh;
 }
 
 #hero {
@@ -25,11 +24,15 @@ html, body {
   background-color: var(--primary-color);
   color: var(--secondary-color);
   font-size: xx-large;
+  height: 100vh;
+
 }
 
-#hero h1 {
+#hero h1 a {
   align-items: center;
+  color: var(--secondary-color);
   text-align: center;
+  text-decoration: none;
 }
 
 #hero nav {
@@ -48,22 +51,24 @@ html, body {
 
 #about {
   flex-direction: row;
+  width: 100%;
+  height: auto;
+  background-color: var(--secondary-color);
+}
+
+#text {
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: var(--secondary-color); ;
   color: var(--primary-color);
-  height: auto;
-  width: 100%;
-}
-
-#left {
-  flex-direction: column;
-  padding: auto;
-  margin: 2%;
+  width: fit-content
 }
 
 #intro {
   font-size: 2.5vh;
+  text-align: justify;
+  margin: 1%;
 }
 
 #projects {
@@ -71,16 +76,48 @@ html, body {
   font-size: 2.4vh;
 }
 
+#projects li a {
+  color: var(--highlight);
+  text-decoration: none;  
+  transition: color 0.3s; /* Smooth transition for color change */
+}
+
+#projects li a:hover {
+  color: var(--tertiary-color);
+}
+
+#back a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color 0.3s;
+}
+
+#back a:hover {
+  color: var(--tertiary-color)
+}
+
+#image {
+  margin: 1% 0.5% 1%;
+}
+
+#image img {
+  margin: 0, 20% 10% 10%;
+}
+
+
 footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: var(--secondary-color); ;
-  padding: 10px;
-  bottom: 0;
   height: 1%;
   width: auto;
+}
+
+#footer hr {
+  width: 50%;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
