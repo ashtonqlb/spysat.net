@@ -1,6 +1,13 @@
+:root {
+  --primary-color: #000;
+  --secondary-color: #fff;
+  --tertiary-color: #888;
+  --highlight: #006aff;
+}
+
 html, body {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  background-color: #000;
+  background-color: var(--primary-color);
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
@@ -15,8 +22,8 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #000;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   font-size: xx-large;
 }
 
@@ -30,21 +37,23 @@ html, body {
 }
 
 #hero nav a {
-  color: #888;
+  color: var(--tertiary-color);
   text-decoration: none;
   transition: color 0.3s; /* Smooth transition for color change */
 }
 
 #hero nav a:hover {
-  color: #fff;
+  color: var(--secondary-color);
 }
 
 #about {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: #fff ;
-  color: #000;
+  background-color: var(--secondary-color); ;
+  color: var(--primary-color);
+  height: auto;
+  width: 100%;
 }
 
 #left {
@@ -62,19 +71,16 @@ html, body {
   font-size: 2.4vh;
 }
 
-#portrait img {
-  max-height: 100%;
-  align-items: flex-end;
-}
-
 footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #fff ;
+  background-color: var(--secondary-color); ;
   padding: 10px;
   bottom: 0;
+  height: 1%;
+  width: auto;
 }
 
 @media (max-width: 768px) {
