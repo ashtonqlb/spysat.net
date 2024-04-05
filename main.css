@@ -1,43 +1,81 @@
 html, body {
-    height: 100%;
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
 }
 
-html {
-    display: table;
-    margin: auto;
+.container {
+  display: flex;
+  height: 100vh;
 }
 
-body {
-    display: table-cell;
-    vertical-align: middle;
-    background: #000;
-    color: #fff;
+#hero {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  color: #fff;
+  font-size: xx-large;
 }
 
-h1 {
-    text-align: center; /* Center-align h1 elements */
+#hero h1 {
+  align-items: center;
+  text-align: center;
 }
 
-nav {
-    text-align: justify; /* Justify-align nav elements */
-    text-align-last: justify; /* For cross-browser compatibility */
-    
+#hero nav {
+  align-items: stretch;
 }
 
-nav a {
-    color: grey; /* Set the default color of the links to grey */
-    text-decoration: none; /* Remove underlines from links */
-    transition: color 0.3s; /* Smooth transition for color change */
+#hero nav a {
+  color: #888;
+  text-decoration: none;
+  transition: color 0.3s; /* Smooth transition for color change */
 }
 
-nav a:hover {
-    color: white; /* Change the color of links to white on hover */
+#hero nav a:hover {
+  color: #fff;
+}
+
+#about {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff ;
+  color: #000;
+}
+
+#left {
+  flex-direction: column;
+  padding: auto;
+  margin: 2%;
+}
+
+#intro {
+  font-size: 2.5vh;
+}
+
+#projects {
+  flex-direction: column;
+  font-size: 2.4vh;
+}
+
+#portrait img {
+  max-height: 100%;
+  align-items: flex-end;
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
-    padding: 10px;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff ;
+  padding: 10px;
+  bottom: 0;
+}
+
+@media (max-width: 768px) {
 }
