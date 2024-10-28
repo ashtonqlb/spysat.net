@@ -5,7 +5,11 @@
   --highlight: #006aff;
 }
 
-html, body {
+* {
+  box-sizing: border-box;
+}
+
+body, html {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   background-color: var(--primary-color);
   margin: 0;
@@ -13,61 +17,87 @@ html, body {
   scroll-behavior: smooth;
 }
 
-.container {
+figcaption {
+  text-align: left;
+  margin-top: 5px;
+  font-size: 1em;
+  color: var(--tertiary-color);
+}
+
+.container, #about {
   display: flex;
+  max-width: 100vw;
+}
+
+.image {
+  max-width: 23.5%;
+}
+
+.image img {
+  max-width: 100%;
+}
+
+.stars, .twinkling {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%; height: 100%;
+}
+
+.stars {
+  background: var(--primary-color) url(assets/stars.png) repeat top center;
+  z-index: 0;
+}
+
+.twinkling {
+  background: transparent url(assets/twinkling.png) repeat top center;
+  z-index: 1;
+  animation: move-twinkle-back 600s linear infinite;
 }
 
 #hero {
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
   font-size: xx-large;
   height: 100vh;
 }
 
-#hero h1 a {
-  align-items: center;
-  color: var(--secondary-color);
+#links {
   text-align: center;
-  text-decoration: none;
-  transition: color 0.3s; /* Smooth transition for color change */
+  font-size: 150%;
+  z-index: 10;
 }
 
-#hero h1 a:hover {
+#links h1 a, #links nav a, #back a, #footer nav a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+#links h1 a:hover, #back a:hover {
   color: var(--highlight);
 }
 
-#hero nav {
-  align-items: stretch;
-}
-
-#hero nav a {
-  color: var(--tertiary-color);
-  text-decoration: none;
-  transition: color 0.3s; /* Smooth transition for color change */
-}
-
-#hero nav a:hover {
+#links nav a:hover {
   color: var(--secondary-color);
 }
 
 #about {
   flex-direction: row;
-  width: 100%;
+  width: 100vw;
   height: auto;
   background-color: var(--secondary-color);
 }
 
 #text {
-  flex-basis: 60%;
+  flex-basis: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--secondary-color); ;
+  background-color: var(--secondary-color);
   color: var(--primary-color);
-  width: fit-content
+  width: fit-content;
 }
 
 #intro {
@@ -81,93 +111,50 @@ html, body {
   font-size: 2.4vh;
 }
 
-#projects li a {
-  color: var(--highlight);
-  text-decoration: none;  
-  transition: color 0.3s; /* Smooth transition for color change */
-}
-
 #projects li a:hover {
   color: var(--tertiary-color);
 }
 
-#back a {
-  text-decoration: none;
-  color: var(--primary-color);
-  transition: color 0.3s;
-}
-
-#back a:hover {
-  color: var(--tertiary-color)
-}
-
-#image {
-  flex-basis: 40%;
-  margin: 1% 0.5% 1%;
-}
-
-#image img {
-  max-width: 100%;
-  max-height: 100%;
-  margin: 0, 20% 10% 10%;
-}
-
-
-footer {
+#footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--secondary-color); ;
-  height: 1%;
+  background-color: var(--secondary-color);
   width: auto;
 }
 
-footer hr {
+#footer hr {
   width: 50%;
   text-align: center;
 }
 
-footer nav {
-  align-items: stretch;
-}
-
-footer nav a {
-  color: var(--tertiary-color);
-  text-decoration: none;
-  transition: color 0.3s; /* Smooth transition for color change */
-}
-
-footer nav a:hover {
-  color: var(--primary-color);
-}
-
-
 @media only screen and (max-device-width: 480px) {
-  #hero {
-    font-size: xxx-large;
+  figure {
+    display: none;
+  }
+
+  #links {
+    font-size: 200%;
+  }
+
+  #intro {
+    text-align: center;
+    margin: 0 0 10px;
   }
 
   #text {
     flex-basis: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--secondary-color); ;
-    color: var(--primary-color);
-    width: fit-content;
     margin: 2%;
   }
 
-  #image {
+  #footer hr, #badges {
     display: none;
   }
 
-  #image img {
-    display: none;
-  }
-
-  footer{
-    display: none;
+  #footer h4, nav {
+    padding: 30px 10px 10px;
+    text-align: center;
+    font-size: xxx-large;
   }
 }
